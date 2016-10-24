@@ -14,6 +14,7 @@
 		36782D761DBD86DC00EB7D8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36782D741DBD86DC00EB7D8F /* LaunchScreen.storyboard */; };
 		36782D811DBD86DC00EB7D8F /* MailboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36782D801DBD86DC00EB7D8F /* MailboxTests.swift */; };
 		36782D8C1DBD86DC00EB7D8F /* MailboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36782D8B1DBD86DC00EB7D8F /* MailboxUITests.swift */; };
+		36782D9A1DBD88A800EB7D8F /* MailboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36782D991DBD88A800EB7D8F /* MailboxViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		36782D871DBD86DC00EB7D8F /* MailboxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MailboxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36782D8B1DBD86DC00EB7D8F /* MailboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailboxUITests.swift; sourceTree = "<group>"; };
 		36782D8D1DBD86DC00EB7D8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36782D991DBD88A800EB7D8F /* MailboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailboxViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				36782D6B1DBD86DC00EB7D8F /* AppDelegate.swift */,
 				36782D6D1DBD86DC00EB7D8F /* ViewController.swift */,
 				36782D6F1DBD86DC00EB7D8F /* Main.storyboard */,
+				36782D991DBD88A800EB7D8F /* MailboxViewController.swift */,
 				36782D721DBD86DC00EB7D8F /* Assets.xcassets */,
 				36782D741DBD86DC00EB7D8F /* LaunchScreen.storyboard */,
 				36782D771DBD86DC00EB7D8F /* Info.plist */,
@@ -264,6 +267,7 @@
 			files = (
 				36782D6E1DBD86DC00EB7D8F /* ViewController.swift in Sources */,
 				36782D6C1DBD86DC00EB7D8F /* AppDelegate.swift in Sources */,
+				36782D9A1DBD88A800EB7D8F /* MailboxViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
