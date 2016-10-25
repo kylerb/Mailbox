@@ -13,6 +13,11 @@ class MailboxViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var contentView: UIView!
+    
+    @IBOutlet weak var messageView: UIView!
+    
+    var messageOriginalCenter: CGPoint!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +25,9 @@ class MailboxViewController: UIViewController, UIScrollViewDelegate {
     scrollView.delegate = self
     scrollView.contentSize = contentView.frame.size
 
-        // Do any additional setup after loading the view.
+    
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +36,28 @@ class MailboxViewController: UIViewController, UIScrollViewDelegate {
     }
     
 
+    @IBAction func didPanMessge(_ sender: UIPanGestureRecognizer) {
+        
+        let location = sender.location(in: view)
+        let velocity = sender.velocity(in: view)
+        let translation = sender.translation(in: view)
+        
+        if sender.state == .began {
+            print("Gesture began")
+            messageOriginalCenter = messageView.center
+        } else if sender.state == .changed {
+            print("Gesture is changing")
+            messageView.center = CGPoint(x: messageOriginalCenter.x + translation.x, y: messageOriginalCenter.y)
+        } else if sender.state == .ended {
+            print("Gesture ended")
+        }
+        
+        
+        
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 
