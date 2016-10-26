@@ -26,6 +26,11 @@
                                                 <frame key="frameInset" minY="13" width="320" height="37"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
+                                            <view contentMode="scaleAspectFit" misplaced="YES" id="hvl-fv-4pG" userLabel="messageBackgroundView">
+                                                <frame key="frameInset" minY="99" width="320" height="86"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
                                             <view contentMode="scaleAspectFit" misplaced="YES" id="9Jy-7L-nOY" userLabel="MessageView">
                                                 <frame key="frameInset" minY="99" width="320" height="86"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -99,6 +104,7 @@
                     <size key="freeformSize" width="320" height="1452"/>
                     <connections>
                         <outlet property="contentView" destination="bkZ-QP-FG3" id="Agd-js-Acr"/>
+                        <outlet property="messageBackgroundView" destination="hvl-fv-4pG" id="0gN-r1-4Wa"/>
                         <outlet property="messageView" destination="9Jy-7L-nOY" id="GXA-bc-uL6"/>
                         <outlet property="scrollView" destination="vsW-6n-4hF" id="Npk-4n-607"/>
                     </connections>
