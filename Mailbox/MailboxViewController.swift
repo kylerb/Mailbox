@@ -26,6 +26,11 @@ class MailboxViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var deleteIcon: UIImageView!
     
+    @IBOutlet weak var listView: UIImageView!
+    
+    @IBOutlet weak var rescheduleView: UIImageView!
+    
+    
     var messageOriginalCenter: CGPoint!
     
     
@@ -43,6 +48,9 @@ class MailboxViewController: UIViewController, UIScrollViewDelegate {
         listIcon.alpha = 0
         archiveIcon.alpha = 0
         deleteIcon.alpha = 0
+        
+        listView.alpha = 0
+        rescheduleView.alpha = 0
         
         
     }
@@ -122,15 +130,25 @@ class MailboxViewController: UIViewController, UIScrollViewDelegate {
                 
                 UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {
                     self.messageView.center.x = -185
+                    self.rescheduleView.alpha = 1
+                    self.messageView.isUserInteractionEnabled = false
                     }, completion: { (Bool) in
-                        // reveal later view
+                        
+                        self.laterIcon.alpha = 0
                 })
             }   else if messageView.center.x < -60 {
                 
                 UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {
                     self.messageView.center.x = -185
+                    self.listView.alpha = 1
+                    self.messageView.isUserInteractionEnabled = false
                     }, completion: { (Bool) in
-                        // reveal list view
+                        
+                        self.listIcon.alpha = 0
+                        
+                        
+                        
+                        
                 })
             }   else if messageView.center.x > 260 {
                 
@@ -161,6 +179,38 @@ class MailboxViewController: UIViewController, UIScrollViewDelegate {
             }
         }
     }
+    
+    @IBAction func didTapReschedule(_ sender: UITapGestureRecognizer) {
+        UIView.animate(withDuration: 0.4, animations: { () -> Void in
+            self.rescheduleView.alpha = 0
+        }) { (Bool) -> Void in
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 2, options: UIViewAnimationOptions.curveEaseOut, animations: { () -> Void in
+                self.messageView.center.x = 160
+                }, completion: nil)
+            UIView.animate(withDuration: 0.5, animations: { () -> Void in
+                self.messageView.backgroundColor = UIColor.lightGray
+            })
+        }
+        self.messageView.isUserInteractionEnabled = true
+    }
+    
+    
+    @IBAction func didTapList(_ sender: UITapGestureRecognizer) {
+        UIView.animate(withDuration: 0.4, animations: { () -> Void in
+            self.listView.alpha = 0
+        }) { (Bool) -> Void in
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 2, options: UIViewAnimationOptions.curveEaseOut, animations: { () -> Void in
+                self.messageView.center.x = 160
+                }, completion: nil)
+            UIView.animate(withDuration: 0.4, animations: { () -> Void in
+                self.messageView.backgroundColor = UIColor.lightGray
+            })
+        }
+        self.messageView.isUserInteractionEnabled = true
+        
+    }
+    
+    
     
 }
 

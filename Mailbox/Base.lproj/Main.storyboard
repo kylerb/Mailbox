@@ -97,6 +97,22 @@
                                 <frame key="frameInset" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="list" id="SVW-GA-l6y">
+                                <frame key="frameInset" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="tgO-i7-o1y" appends="YES" id="uHq-n6-KFv"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="reschedule" id="xTt-XN-kcr">
+                                <frame key="frameInset" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="eCK-AJ-TC0" appends="YES" id="yNI-0k-3rB"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -108,8 +124,10 @@
                         <outlet property="deleteIcon" destination="g5C-f3-NqM" id="Eta-GZ-q3j"/>
                         <outlet property="laterIcon" destination="VNU-lK-c8q" id="u43-z0-o9W"/>
                         <outlet property="listIcon" destination="pdC-Wj-MIi" id="VIR-xu-tHu"/>
+                        <outlet property="listView" destination="SVW-GA-l6y" id="y5u-fW-V1y"/>
                         <outlet property="messageBackgroundView" destination="hvl-fv-4pG" id="0gN-r1-4Wa"/>
                         <outlet property="messageView" destination="9Jy-7L-nOY" id="GXA-bc-uL6"/>
+                        <outlet property="rescheduleView" destination="xTt-XN-kcr" id="O8T-CZ-Jgc"/>
                         <outlet property="scrollView" destination="vsW-6n-4hF" id="Npk-4n-607"/>
                     </connections>
                 </viewController>
@@ -119,6 +137,16 @@
                         <action selector="didPanMessge:" destination="BYZ-38-t0r" id="1BN-Rx-3RS"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer cancelsTouchesInView="NO" id="tgO-i7-o1y">
+                    <connections>
+                        <action selector="didTapList:" destination="BYZ-38-t0r" id="8wQ-mH-jsH"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer cancelsTouchesInView="NO" id="eCK-AJ-TC0">
+                    <connections>
+                        <action selector="didTapReschedule:" destination="BYZ-38-t0r" id="jMa-H3-zj5"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="86" y="153"/>
         </scene>
